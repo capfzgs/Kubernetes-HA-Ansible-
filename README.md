@@ -130,7 +130,7 @@ ansible -i inventory.ini all -m ping
 ### 第二步：克隆项目
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/k8s-ansible-ha.git
+git clone https://github.com/capfzgs/k8s-ansible-ha.git
 cd k8s-ansible-ha
 ```
 
