@@ -127,11 +127,76 @@ done
 ansible -i inventory.ini all -m ping
 ```
 
-### 第二步：克隆项目
+### 第二步：直接下载k8s-final9.tar.gz文件，使用Winscap上传至ansible主机并解压，在文件目录执行即可
 
 ```bash
-git clone https://github.com/capfzgs/k8s-ansible-ha.git
-cd k8s-ansible-ha
+[root@ollama ~]# tar -zxvf k8s-final9.tar.gz
+k8s-final9/
+k8s-final9/site.yml
+k8s-final9/{group_vars,roles/
+k8s-final9/{group_vars,roles/{common/
+k8s-final9/{group_vars,roles/{common/{tasks,handlers},haproxy_keepalived/
+k8s-final9/{group_vars,roles/{common/{tasks,handlers},haproxy_keepalived/{tasks,handlers,templates},containerd/
+k8s-final9/{group_vars,roles/{common/{tasks,handlers},haproxy_keepalived/{tasks,handlers,templates},containerd/{tasks,handlers,templates},kubernetes/
+k8s-final9/{group_vars,roles/{common/{tasks,handlers},haproxy_keepalived/{tasks,handlers,templates},containerd/{tasks,handlers,templates},kubernetes/tasks,master_init/
+k8s-final9/{group_vars,roles/{common/{tasks,handlers},haproxy_keepalived/{tasks,handlers,templates},containerd/{tasks,handlers,templates},kubernetes/tasks,master_init/tasks,master_join/
+k8s-final9/{group_vars,roles/{common/{tasks,handlers},haproxy_keepalived/{tasks,handlers,templates},containerd/{tasks,handlers,templates},kubernetes/tasks,master_init/tasks,master_join/tasks,worker_join/
+k8s-final9/{group_vars,roles/{common/{tasks,handlers},haproxy_keepalived/{tasks,handlers,templates},containerd/{tasks,handlers,templates},kubernetes/tasks,master_init/tasks,master_join/tasks,worker_join/tasks}}/
+k8s-final9/group_vars/
+k8s-final9/group_vars/all.yml
+k8s-final9/inventory.ini
+k8s-final9/reset.yml
+k8s-final9/roles/
+k8s-final9/roles/containerd/
+k8s-final9/roles/containerd/tasks/
+k8s-final9/roles/containerd/tasks/main.yml
+k8s-final9/roles/containerd/handlers/
+k8s-final9/roles/containerd/handlers/main.yml
+k8s-final9/roles/containerd/templates/
+k8s-final9/roles/containerd/templates/config.toml.j2
+k8s-final9/roles/worker_join/
+k8s-final9/roles/worker_join/tasks/
+k8s-final9/roles/worker_join/tasks/main.yml
+k8s-final9/roles/keepalived_only/
+k8s-final9/roles/keepalived_only/tasks/
+k8s-final9/roles/keepalived_only/tasks/main.yml
+k8s-final9/roles/keepalived_only/handlers/
+k8s-final9/roles/keepalived_only/handlers/main.yml
+k8s-final9/roles/keepalived_only/templates/
+k8s-final9/roles/keepalived_only/templates/keepalived.conf.j2
+k8s-final9/roles/keepalived_only/{tasks,handlers,templates}/
+k8s-final9/roles/common/
+k8s-final9/roles/common/tasks/
+k8s-final9/roles/common/tasks/main.yml
+k8s-final9/roles/kubernetes/
+k8s-final9/roles/kubernetes/tasks/
+k8s-final9/roles/kubernetes/tasks/main.yml
+k8s-final9/roles/haproxy_keepalived/
+k8s-final9/roles/haproxy_keepalived/tasks/
+k8s-final9/roles/haproxy_keepalived/tasks/main.yml
+k8s-final9/roles/haproxy_keepalived/handlers/
+k8s-final9/roles/haproxy_keepalived/handlers/main.yml
+k8s-final9/roles/haproxy_keepalived/templates/
+k8s-final9/roles/haproxy_keepalived/templates/haproxy.cfg.j2
+k8s-final9/roles/haproxy_keepalived/templates/keepalived.conf.j2
+k8s-final9/roles/haproxy_only/
+k8s-final9/roles/haproxy_only/tasks/
+k8s-final9/roles/haproxy_only/tasks/main.yml
+k8s-final9/roles/haproxy_only/handlers/
+k8s-final9/roles/haproxy_only/handlers/main.yml
+k8s-final9/roles/haproxy_only/templates/
+k8s-final9/roles/haproxy_only/templates/haproxy.cfg.j2
+k8s-final9/roles/haproxy_only/{tasks,handlers,templates}/
+k8s-final9/roles/master_init/
+k8s-final9/roles/master_init/tasks/
+k8s-final9/roles/master_init/tasks/main.yml
+k8s-final9/roles/master_join/
+k8s-final9/roles/master_join/tasks/
+k8s-final9/roles/master_join/tasks/main.yml
+[root@ollama ~]# cd k8s-final9
+[root@ollama k8s-final9]# ls
+group_vars  {group_vars,roles  inventory.ini  reset.yml  roles  site.yml
+
 ```
 
 ### 第三步：修改配置
