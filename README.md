@@ -5,7 +5,7 @@
 [![Ansible](https://img.shields.io/badge/Ansible-2.12+-red)](https://www.ansible.com/)
 [![Platform](https://img.shields.io/badge/Platform-CentOS%20Stream%209-lightgrey)](https://centos.org/)
 
-基于 Ansible 一键部署生产级 Kubernetes 高可用集群。支持 **2 控制节点 + N 工作节点**架构，使用 **HAProxy + Keepalived** 实现控制平面高可用，**Calico** 作为 CNI，全程走**阿里云镜像**，无需科学上网。
+基于 Ansible 一键部署生产级 Kubernetes 高可用集群。支持 **3 控制节点 + N 工作节点**架构，使用 **HAProxy + Keepalived** 实现控制平面高可用，**Calico** 作为 CNI，全程走**阿里云镜像**，无需科学上网。
 
 > ✅ 已在 VMware vSphere 虚拟化环境实测，针对 VMware ARP 过滤问题做了专项处理。
 
